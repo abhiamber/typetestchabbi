@@ -34,13 +34,14 @@ function Body() {
   };
 
   const calculateTheAccuracy = () => {
-    const validScore = score.matchScore - score.nonMatched;
-    const calucatePercentage = (validScore / selectorObject.length) * 100;
+    const calucatePercentage =
+      (score.matchScore / (score.matchScore + score.nonMatched)) * 100;
     const toFixedTwo = calucatePercentage.toFixed(2);
-    // if (toFixedTwo < 0) {
-    //   return 0;
-    // }
-    return toFixedTwo;
+    console.log(toFixedTwo);
+    if (toFixedTwo > 0) {
+      return toFixedTwo;
+    }
+    return 0;
   };
 
   return (
@@ -48,7 +49,24 @@ function Body() {
       <Header setStartType={setStartType} />
       <div className={style["body-main-container"]}>
         <div className={style["inside-container-body"]}>
-          <p className={style["demo-data-body"]}>{selectorObject}</p>
+          <p className={style["demo-data-body"]}>
+            {selectorObject.split("").map((w, index) => (
+              <span
+                key={index}
+                style={{
+                  color:
+                    userTyped.length === index
+                      ? "red"
+                      : userTyped.length > index + 1
+                      ? "blue"
+                      : null,
+                  fontSize: userTyped.length > index + 1 ? "15px" : null,
+                }}
+              >
+                {w}
+              </span>
+            ))}
+          </p>
           <textarea
             id="#userTypedTextID"
             disabled={startType}

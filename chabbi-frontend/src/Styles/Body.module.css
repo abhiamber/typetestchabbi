@@ -22,6 +22,8 @@
 }
 .demo-data-body {
   margin-bottom: 15px;
+  width: 100%;
+  font-size: 20px;
 }
 
 .body-user-input {
