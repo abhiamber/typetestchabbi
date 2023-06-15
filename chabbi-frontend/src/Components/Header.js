@@ -7,13 +7,8 @@ import style from "../Styles/Header.module.css";
 import { useEffect, useRef, useState } from "react";
 import Timer from "./Timer";
 
-const Header = () => {
-  const navigate = useNavigate();
+const Header = ({ setStartType }) => {
   const dispachFn = useDispatch();
-
-  const clickedOnCustomText = () => {
-    navigate("/custom-text", { replace: true });
-  };
 
   const clickedOnReset = () => {
     dispachFn(resetData());
@@ -24,7 +19,9 @@ const Header = () => {
     <div className={style["main-header-container"]}>
       <div className={style["header-title-logo"]}>TouchTyping</div>
       <div className={style["header-user-input-email"]}>
-        <Timer />
+        <Timer
+          setStartType={setStartType}
+        />
 
         <div className={style["header-icon-container"]}>
           <BiReset size={30} onClick={clickedOnReset} />

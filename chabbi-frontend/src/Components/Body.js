@@ -7,15 +7,14 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import style from "../Styles/Body.module.css";
 
 function Body() {
-  const selectorObject = useSelector((reducer) => reducer.textData);
-
+  const selectorObject = useSelector((reducer) => reducer.resetData);
   const [userTyped, updateTyped] = useState("");
+  const [startType, setStartType] = useState(true);
   const [score, updateScore] = useState({ matchScore: 0, nonMatched: 0 });
-  const [accuracy, updateAccuracy] = useState(0);
 
   const keyPressedUser = (event) => {
     const alphanumericPattern = /^[a-zA-Z0-9!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]$/;
-    console.log(event.key);
+    // console.log(event.key);
     if (alphanumericPattern.test(event.key)) {
       const isMatched = event.key === selectorObject[userTyped.length];
       if (isMatched === true) {
@@ -34,33 +33,25 @@ function Body() {
     updateTyped(event.target.value);
   };
 
-  const calculateProgress = () => {
-    let progress = 0;
-
-    if (userTyped && userTyped.length >= selectorObject.length) {
-      progress = 100;
-    } else if (userTyped) {
-      progress = (userTyped.length / selectorObject.length) * 100;
-    }
-
-    return progress.toFixed(2);
-  };
-
   const calculateTheAccuracy = () => {
     const validScore = score.matchScore - score.nonMatched;
     const calucatePercentage = (validScore / selectorObject.length) * 100;
     const toFixedTwo = calucatePercentage.toFixed(2);
-    updateAccuracy(toFixedTwo);
+    // if (toFixedTwo < 0) {
+    //   return 0;
+    // }
+    return toFixedTwo;
   };
 
   return (
     <>
-      <Header />
+      <Header setStartType={setStartType} />
       <div className={style["body-main-container"]}>
         <div className={style["inside-container-body"]}>
           <p className={style["demo-data-body"]}>{selectorObject}</p>
           <textarea
             id="#userTypedTextID"
+            disabled={startType}
             onKeyDown={keyPressedUser}
             onChange={userTestStart}
             className={style["body-user-input"]}
@@ -79,18 +70,12 @@ function Body() {
             <div className={style["body-result-icon-text-container"]}>
               <FaTasks className={style["body-task-icon"]} size={25} />
               <p className={style["body-res-text-style"]}>
-                Progress: <span>{calculateProgress()}%</span>
+                Total Pressed Key:{" "}
+                <span>{score.matchScore + score.nonMatched}</span>
               </p>
             </div>
           </div>
           <div className={style["calculate-accuracy-button-container"]}>
-            <button
-              onClick={calculateTheAccuracy}
-              type="button"
-              className={style["calculate-accuracy-button"]}
-            >
-              Calculate Accuracy
-            </button>
             <div
               className={style["body-res-calculate-accuracy-content-container"]}
             >
@@ -99,7 +84,7 @@ function Body() {
                 size={25}
               />
               <p className={style["body-res-text-style"]}>
-                Accuracy: <span>{accuracy}%</span>
+                Accuracy: <span>{calculateTheAccuracy()}%</span>
               </p>
             </div>
           </div>

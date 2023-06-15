@@ -10,7 +10,7 @@ const formatTimeToString = (time) => {
   return outputString;
 };
 
-const Timer = () => {
+const Timer = ({ setStartType }) => {
   let [toggle, setToogle] = useState(true);
   let refId = useRef();
   let [timer, SetTimer] = useState(300);
@@ -18,8 +18,9 @@ const Timer = () => {
   let timerFunction = () => {
     refId.current = setInterval(() => {
       SetTimer((prev) => {
-        if (prev <= 0) {
+        if (prev === 0) {
           setToogle(true);
+          setStartType(false);
           clearInterval(refId.current);
           return 300;
         } else {
@@ -43,6 +44,7 @@ const Timer = () => {
         onClick={() => {
           setToogle(!toggle);
           timerFunction();
+          setStartType(false);
         }}
       >
         Start
