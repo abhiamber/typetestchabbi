@@ -27,7 +27,7 @@ const Timer = ({ setStartType }) => {
           return prev - 1;
         }
       });
-    }, 100);
+    }, 1000);
   };
 
   useEffect(() => {
