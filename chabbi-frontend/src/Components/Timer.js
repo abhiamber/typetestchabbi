@@ -19,8 +19,9 @@ const Timer = ({ setStartType }) => {
     refId.current = setInterval(() => {
       SetTimer((prev) => {
         if (prev === 0) {
+          setStartType(true);
+
           setToogle(true);
-          setStartType(false);
           clearInterval(refId.current);
           return 300;
         } else {

@@ -19,9 +19,7 @@ const Header = ({ setStartType }) => {
     <div className={style["main-header-container"]}>
       <div className={style["header-title-logo"]}>TouchTyping</div>
       <div className={style["header-user-input-email"]}>
-        <Timer
-          setStartType={setStartType}
-        />
+        <Timer setStartType={setStartType} />
 
         <div className={style["header-icon-container"]}>
           <BiReset size={30} onClick={clickedOnReset} />

@@ -11,6 +11,7 @@ function Body() {
   const [userTyped, updateTyped] = useState("");
   const [startType, setStartType] = useState(true);
   const [score, updateScore] = useState({ matchScore: 0, nonMatched: 0 });
+  console.log(startType);
 
   const keyPressedUser = (event) => {
     const alphanumericPattern = /^[a-zA-Z0-9!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]$/;
@@ -37,7 +38,7 @@ function Body() {
     const calucatePercentage =
       (score.matchScore / (score.matchScore + score.nonMatched)) * 100;
     const toFixedTwo = calucatePercentage.toFixed(2);
-    console.log(toFixedTwo);
+    // console.log(toFixedTwo);
     if (toFixedTwo > 0) {
       return toFixedTwo;
     }
