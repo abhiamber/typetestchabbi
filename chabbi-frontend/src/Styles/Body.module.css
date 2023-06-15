@@ -1,0 +1,112 @@
+.body-main-container {
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inside-container-body {
+  border: 5px solid #a80f6e;
+  min-height: 80vh;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #9f9f9f;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #9f9f9f;
+  text-align: justify;
+  min-width: 600px;
+}
+.demo-data-body {
+  margin-bottom: 15px;
+}
+
+.body-user-input {
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+  box-shadow: 1px 1px 5px grey;
+  border: none;
+  border-radius: 8px;
+  min-height: 120px;
+}
+.home-message-block {
+  text-align: center;
+  margin-top: 15px;
+  color: green;
+  font-weight: 500;
+}
+.complete-body-res-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.body-result-icon-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  color: #c2185b;
+}
+
+.body-res-text-style {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.body-error-icon {
+  color: rgb(159, 63, 159);
+  margin-right: 10px;
+}
+
+.body-task-icon {
+  color: rgb(156, 83, 0);
+  margin-right: 10px;
+}
+
+.body-check-icon {
+  color: rgb(0, 146, 0);
+  margin-right: 10px;
+}
+
+.calculate-accuracy-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.calculate-accuracy-button {
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  background: #2a96c8;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  border: none;
+  margin: 15px 0px 15px 0px;
+}
+
+.calculate-accuracy-button:hover {
+  background-color: rgb(0, 169, 51);
+  color: white;
+}
+
+.body-res-calculate-accuracy-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: green;
+}
