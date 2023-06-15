@@ -19,16 +19,15 @@ const Timer = ({ setStartType }) => {
     refId.current = setInterval(() => {
       SetTimer((prev) => {
         if (prev === 0) {
-          setStartType(true);
-
           setToogle(true);
+          setStartType(true);
           clearInterval(refId.current);
           return 300;
         } else {
           return prev - 1;
         }
       });
-    }, 1000);
+    }, 100);
   };
 
   useEffect(() => {
