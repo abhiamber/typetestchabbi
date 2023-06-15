@@ -11,7 +11,6 @@ function Body() {
   const [userTyped, updateTyped] = useState("");
   const [startType, setStartType] = useState(true);
   const [score, updateScore] = useState({ matchScore: 0, nonMatched: 0 });
-  console.log(startType);
 
   const keyPressedUser = (event) => {
     const alphanumericPattern = /^[a-zA-Z0-9!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]$/;

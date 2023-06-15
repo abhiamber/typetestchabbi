@@ -1,10 +1,7 @@
-import { IoIosMail } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { BiReset } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { resetData } from "../Redux/action";
 import style from "../Styles/Header.module.css";
-import { useEffect, useRef, useState } from "react";
 import Timer from "./Timer";
 
 const Header = ({ setStartType }) => {
