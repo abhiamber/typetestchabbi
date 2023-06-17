@@ -11,7 +11,7 @@ function Body() {
   const [userTyped, updateTyped] = useState("");
   const [startType, setStartType] = useState(true);
   const [score, updateScore] = useState({ matchScore: 0, nonMatched: 0 });
-  console.log(startType);
+  // console.log(userTyped[1], "njk.us", userTyped);
 
   const keyPressedUser = (event) => {
     const alphanumericPattern = /^[a-zA-Z0-9!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]$/;
@@ -56,17 +56,40 @@ function Body() {
                 style={{
                   color:
                     userTyped.length === index
-                      ? "red"
-                      : userTyped.length > index + 1
+                      ? "yellow"
+                      : userTyped[index] === w
                       ? "blue"
+                      : userTyped.length > index + 1
+                      ? "red"
                       : null,
-                  fontSize: userTyped.length > index + 1 ? "15px" : null,
+                  fontSize:
+                    userTyped[index] !== w
+                      ? "20px"
+                      : userTyped.length > index + 1
+                      ? "15px"
+                      : "20px",
                 }}
               >
                 {w}
               </span>
             ))}
           </p>
+          <h1
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <button
+              style={{
+                textAlign: "center",
+                color: "red",
+                fontSize: "20px",
+                background: "yellow",
+              }}
+            >
+              {selectorObject[userTyped.length]}
+            </button>
+          </h1>
           <textarea
             id="#userTypedTextID"
             disabled={startType}

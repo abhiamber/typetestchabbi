@@ -1,7 +1,7 @@
 .main-header-container {
-  background-color: purple;
+  background-color: blue;
   padding: 10px 20px 10px 20px;
-  color: white;
+  color: orange;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 
 .header-title-logo {
   font-size: 25px;
-  color: #fa0c9f;
+  color: orange;
   font-weight: 700;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .header-main-input-button {
-  background-color: white;
+  background-color: orange;
   padding: 10px 15px 10px 15px;
   /* font-size: 20px; */
   border: none;
