@@ -5,10 +5,15 @@ regularly and gaining muscle memory to eventually build up speed whilst typing.W
 
 # Feature
 render Timer Count down.
+
 render the Accuracy, Mistake and Total No Key Pressed.
+
 Start button to start the typing test and refresh button to start new test .
+
 Showing next key to type.
+
 showing red color on typing wrong key.
+
 
 
 
