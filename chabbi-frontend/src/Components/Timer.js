@@ -51,7 +51,7 @@ const Timer = ({ setStartType }) => {
       </button>
 
       <button className={style["header-main-input-button"]} type="button">
-        <span style={{ color: "teal", fontSize: "20px" }}>
+        <span style={{ color: "white", fontSize: "20px" }}>
           {formatTimeToString(timer)}
         </span>
       </button>
