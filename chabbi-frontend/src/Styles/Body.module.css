@@ -10,7 +10,7 @@
 }
 
 .inside-container-body {
-  border: 5px solid #a80f6e;
+  border: 5px solid green;
   /* min-height: 50vh; */
   padding: 20px;
   border-radius: 10px;
@@ -60,7 +60,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 10px;
-  color: #c2185b;
+  color: green;
 }
 
 .body-res-text-style {
@@ -69,12 +69,12 @@
 }
 
 .body-error-icon {
-  color: rgb(159, 63, 159);
+  color: green;
   margin-right: 10px;
 }
 
 .body-task-icon {
-  color: rgb(156, 83, 0);
+  color: green;
   margin-right: 10px;
 }
 
